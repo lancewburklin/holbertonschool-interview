@@ -14,10 +14,10 @@ def canUnlockAll(boxes):
         flag = 1
         for i in range(num):
             for x in boxes[i]:
-                if tester[i] == True:
-                    if tester[x] == False:
-                    	tester[x] = True
-                    	flag = 0
+                if tester[i] is True:
+                    if tester[x] is False:
+                        tester[x] = True
+                        flag = 0
     if False in tester:
         return False
     return True
