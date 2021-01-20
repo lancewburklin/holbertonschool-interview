@@ -13,13 +13,13 @@ int is_palindrome(listint_t **head)
 {
 	if (head == NULL)
 		return (1);
-	return (is_palindrome_two(head, *head)); 
+	return (is_palindrome_two(head, *head));
 }
 
 /**
  * is_palindrome_two - Recursively finds if list is palindrome
- * @left - Left check
- * @right - Right check
+ * @left: Left check
+ * @right: Right check
  *
  * Return: 1 if palindrome, or 0 if not
 */
