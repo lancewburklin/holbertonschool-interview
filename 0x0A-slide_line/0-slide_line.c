@@ -16,10 +16,10 @@ int slide_line(int *line, size_t size, int direction)
 {
 	size_t i = 0, x = 0;
 
-	if (direction != -1 && direction != 1)
-		return (0);
 	if (size == 1)
 		return (1);
+	if (size <= 0)
+		return (0);
 	if (direction == -1)
 	{
 		for (x = 1; x < size; x++, i++)
@@ -49,11 +49,11 @@ int slide_line(int *line, size_t size, int direction)
 				x = i + 1;
 			}
 		}
-		merge(line, size, direction);
+		return (merge(line, size, direction));
 	}
 	else if (direction == 1)
 		return (slide_right(line, size, direction));
-	return (1);
+	return (0);
 }
 
 /**
