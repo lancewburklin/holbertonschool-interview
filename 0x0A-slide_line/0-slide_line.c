@@ -16,11 +16,11 @@ int slide_line(int *line, size_t size, int direction)
 {
 	size_t i = 0, x = 0;
 
-	if (direction != 0 && direction != 1)
+	if (direction != -1 && direction != 1)
 		return (0);
 	if (size == 1)
 		return (1);
-	if (direction == 0)
+	if (direction == -1)
 	{
 		for (x = 1; x < size; x++, i++)
 		{
@@ -118,7 +118,7 @@ int merge(int *line, size_t size, int direction)
 {
 	size_t i = 0, x = 1;
 
-	if (direction == 0)
+	if (direction == -1)
 	{
 		for (x = 0; x < size; i++, x++)
 		{
@@ -128,7 +128,6 @@ int merge(int *line, size_t size, int direction)
 				{
 					x++;
 				}
-				printf("%d\n", line[x]);
 				line[i] = line[x];
 				line[x] = 0;
 				if (x == size)
