@@ -16,7 +16,6 @@ void menger(int level)
 	int depth = level;
 
 	size = pow(3, depth);
-	printf("Size: %d\n", size);
 	for (i = 0; i < size; i++)
 	{
 		for (j = 0; j < size; j++)
@@ -25,8 +24,8 @@ void menger(int level)
 			{
 				if ((i % (d * 3)) / d == 1 && (j % (d * 3)) / d == 1)
 					break;
-					printf(d ? " " : "#");
 			}
+			printf(d ? " " : "#");
 				}
 				printf("\n");
 			}
