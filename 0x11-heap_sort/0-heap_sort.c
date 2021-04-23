@@ -22,10 +22,13 @@ void heap_sort(int *array, size_t size)
 	while (i > 1)
 	{
 		heapify(array, i, 0, size);
-		temp = array[0];
-		array[0] = array[i - 1];
-		array[i - 1] = temp;
-		print_array(array, size);
+		if (array[0] != array[i - 1])
+		{
+			temp = array[0];
+			array[0] = array[i - 1];
+			array[i - 1] = temp;
+			print_array(array, size);
+		}
 		i--;
 	}
 }
