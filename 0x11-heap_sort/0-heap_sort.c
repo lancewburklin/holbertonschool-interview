@@ -19,7 +19,7 @@ void heap_sort(int *array, size_t size)
 		return;
 	if (size < 2)
 		return;
-	while (i > 0)
+	while (i > 1)
 	{
 		heapify(array, i, 0, size);
 		temp = array[0];
@@ -49,13 +49,9 @@ size_t heapify(int *array, size_t size, size_t node, size_t t)
 	if (node == size)
 		return (node);
 	if ((2 * node + 1) < size)
-	{
 		left = heapify(array, size, (2 * node) + 1, t);
-	}
 	if ((2 * node + 2) < size)
-	{
 		right = heapify(array, size, (2 * node) + 2, t);
-	}
 	if (array[node] < array[right] || array[node] < array[left])
 	{
 		if (array[left] > array[right])
