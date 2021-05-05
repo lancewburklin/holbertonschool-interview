@@ -27,6 +27,9 @@ def count_words(subreddit, word_list, after="", count=0, list_dict={}):
     if info.status_code == 200:
         info = info.json()
         if len(info.get('data').get('children')) == 0:
+            if max(list_dict.values()) == 0:
+                print("")
+                return
             sort_list = (sorted(list_dict.items(), key=operator.itemgetter(1)))
             for i in range(len(sort_list) - 1, -1, -1):
                 if sort_list[i][1] != 0:
@@ -45,6 +48,9 @@ def count_words(subreddit, word_list, after="", count=0, list_dict={}):
         if after is not None:
             count_words(subreddit, word_list, after, count, list_dict)
         else:
+            if max(list_dict.values()) == 0:
+                print("")
+                return
             sort_list = (sorted(list_dict.items(), key=operator.itemgetter(1)))
             for i in range(len(sort_list) - 1, -1, -1):
                 if sort_list[i][1] != 0:
