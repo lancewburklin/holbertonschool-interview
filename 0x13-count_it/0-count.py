@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ Count subreddits with key words """
-import sys
+import operator
 import requests
+import sys
 
 
 def count_words(subreddit, word_list, after="", count=0, list_dict={}):
-    """ Count words """
     stuff = {'User-Agent':
              'Mozilla/5.0'}
     link = "https://www.reddit.com/r/{}".format(subreddit)
@@ -27,8 +27,10 @@ def count_words(subreddit, word_list, after="", count=0, list_dict={}):
     if info.status_code == 200:
         info = info.json()
         if len(info.get('data').get('children')) == 0:
-            for key, value in list_dict.items():
-                print("{}: {}".format(key, value))
+            sort_list = (sorted(list_dict.items(), key=operator.itemgetter(1)))
+            for i in range(len(sort_list) - 1, -1, -1):
+                if sort_list[i][1] != 0:
+                    print("{}: {}".format(sort_list[i][0], sort_list[i][1]))
             return
         post = info.get('data').get('children')[0].get('data')
         title = post.get('title')
@@ -43,6 +45,8 @@ def count_words(subreddit, word_list, after="", count=0, list_dict={}):
         if after is not None:
             count_words(subreddit, word_list, after, count, list_dict)
         else:
-            for key, value in list_dict.items():
-                print("{}: {}".format(key, value))
+            sort_list = (sorted(list_dict.items(), key=operator.itemgetter(1)))
+            for i in range(len(sort_list) - 1, -1, -1):
+                if sort_list[i][1] != 0:
+                    print("{}: {}".format(sort_list[i][0], sort_list[i][1]))
             return
