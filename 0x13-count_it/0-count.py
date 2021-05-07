@@ -12,7 +12,7 @@ def count_words(subreddit, word_list, after="", count=0, list_dict={}):
     if list_dict == {}:
         for word in word_list:
             try:
-                list_dict[str(word.lower())]
+                someBadVar = list_dict[word.lower()]
                 word_list.remove(word)
             except Exception:
                 list_dict[word.lower()] = 0
