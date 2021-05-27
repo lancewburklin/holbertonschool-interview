@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Rotate a matrix"""
 
 
 def rotate_2d_matrix(matrix):
+    """ Rotate a matrix """
     size = len(matrix[0])
     for i in range(size // 2):
         for x in range(i, size - i - 1):
