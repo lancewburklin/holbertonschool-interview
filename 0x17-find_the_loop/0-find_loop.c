@@ -18,7 +18,6 @@ listint_t *find_listint_loop(listint_t *head)
         return (NULL);
     while (turtle->next != NULL && hare->next->next != NULL)
     {
-        printf("%d\n", turtle->n);
         hare = hare->next->next;
         turtle = turtle->next;
         if (hare == turtle)
