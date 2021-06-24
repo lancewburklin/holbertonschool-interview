@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""
+Change calculator in Python
+"""
 
 
 def makeChange(coins, total):
+    """ Function to perform calculation """
     if (total <= 0):
         return 0
     count = [-1 for i in range(0, total + 1)]
