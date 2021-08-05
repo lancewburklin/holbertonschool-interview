@@ -16,6 +16,6 @@ def pascal_triangle(n):
         newRow = []
         for i in range(1, row + 1):
             newRow.append(num)
-            num = int(num * (n - i) / i)
+            num = int(num * (row - i) / i)
         triangle.append(newRow)
     return (triangle)
