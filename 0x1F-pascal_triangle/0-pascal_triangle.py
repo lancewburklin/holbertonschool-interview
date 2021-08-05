@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""
+Pascal Triangle module
+"""
+
 
 def pascal_triangle(n):
+    """
+    Pascal Triangle Function
+    """
     triangle = []
     if (n <= 0):
         return []
