@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * regex_match - Simple regex function
+ * @str: String to check
+ * @pattern: Pattern to compare
+ *
+ * Return: 1 for yes, 0 for now
+*/
+
 int regex_match(char const *str, char const *pattern)
 {
 	if (*str == '\0' && *pattern == '\0')
