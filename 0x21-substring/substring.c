@@ -20,4 +20,5 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 		return (NULL);
 	if (nb_words == 0)
 		return (NULL);
+	return (n);
 }
