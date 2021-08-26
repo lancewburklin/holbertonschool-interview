@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+    Find the answer to the Prime Game Problem
+"""
 
 allNumbers = {
     0: False,
@@ -9,6 +11,9 @@ allNumbers = {
 
 
 def checkPrime(x):
+    """
+        Check if a number is prime
+    """
     if (x in allNumbers):
         return allNumbers[x]
     for i in range(2, x):
@@ -20,6 +25,9 @@ def checkPrime(x):
 
 
 def isWinner(x, nums):
+    """
+        Solve the solution
+    """
     if (x < 1):
         return None
     if nums == []:
